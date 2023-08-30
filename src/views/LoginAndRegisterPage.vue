@@ -91,9 +91,11 @@ const signUpButton = async () => {
 <template>
 
   <div class="navbar-block">
-    <v-btn block class="navbar-brand" a href="/">
-      回到Gallexiv首頁
-    </v-btn>
+    <router-link to="/">
+     <button style="background-color: #A596F4; border: white ; width: 360px">
+       回到Gallexiv首頁
+     </button>
+    </router-link>
   </div>
 
   <div class="container" :class="{ 'right-panel-active': isRightPanelActive }" id="container">
@@ -121,7 +123,7 @@ const signUpButton = async () => {
           </div>
           <div class="verification-div" style="display: flex">
             <div class="verification-input-div" >
-              <input-text-box v-model="VsignUpPasswordId" label-id="signUpPasswordId" labelText="密碼" type-id="password"
+              <input-text-box v-model="VsignUpPasswordId" label-id="signUpPasswordId" labelText="驗證碼" type-id="password"
                               is-required="true" @blur="validatePassword" style="width: 180px"/>
             </div>
             <div class="verification-picture-div">
@@ -185,10 +187,19 @@ const signUpButton = async () => {
   src: url('../assets/fonts/applegothic.ttf') format('truetype');
 }
 
-.navbar-brand {
-  position: relative;
-  border-radius: 8px;
-  bottom: -8px;
+.navbar-block{
+  display: flex;
+  justify-content:center;
+
+}
+
+.navbar-brand{
+  border: #0dcaf0;
+  background-color: #0dcaf0;
+}
+
+.navbar-brand font :hover{
+  color: white;
 }
 
 * {
